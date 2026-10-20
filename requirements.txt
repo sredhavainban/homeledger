@@ -1,0 +1,11 @@
+flask
+numpy
+scipy
+librosa
+pyaudio
+pyrtlsdr
+tflite-runtime
+openai-whisper
+psutil
+scikit-learn
+requests

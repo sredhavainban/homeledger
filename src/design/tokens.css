@@ -1,0 +1,103 @@
+/*
+  HomeLedger Design Tokens
+  ---------------------------------------------------
+  Generated for the new premium design system.
+  - Light and dark mode color scales
+  - Semantic colors (brand accent, income, expense, warning, info)
+  - Radius, elevation, motion, typography
+  - All values are exposed as CSS variables for use in Tailwind utilities
+*/
+
+/* ---------------------------------------------------
+   Color Palette – Light Mode
+   --------------------------------------------------- */
+:root {
+  /* Neutral gray scale (9 steps) */
+  --color-neutral-50: #f9fafb;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-300: #d1d5db;
+  --color-neutral-400: #9ca3af;
+  --color-neutral-500: #6b7280;
+  --color-neutral-600: #4b5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #1f2937;
+  --color-neutral-900: #111827;
+
+  /* Brand accent – calm teal */
+  --color-brand: #0d9488; /* teal‑600 */
+
+  /* Semantic colors */
+  --color-income: #10b981;   /* green‑500 */
+  --color-expense: #ef4444; /* red‑500 */
+  --color-warning: #f59e0b; /* amber‑500 */
+  --color-info: #3b82f6;    /* blue‑500 */
+
+  /* Background & foreground */
+  --color-background: var(--color-neutral-50);
+  --color-surface: #ffffff;
+  --color-surface-hover: #f3f4f6;
+  --color-foreground: var(--color-neutral-900);
+  --color-muted: var(--color-neutral-500);
+
+  /* Borders */
+  --color-border: var(--color-neutral-200);
+
+  /* Radii */
+  --radius-sm: 0.375rem;  /* 6px */
+  --radius-md: 0.625rem;  /* 10px */
+  --radius-pill: 9999px;
+
+  /* Elevation – subtle */
+  --shadow-elev-1: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-elev-2: 0 2px 4px rgba(0,0,0,0.07);
+  --shadow-elev-3: 0 4px 8px rgba(0,0,0,0.09);
+
+  /* Motion */
+  --duration-short: 120ms;
+  --duration-medium: 200ms;
+  --ease-out: cubic-bezier(0.25,0.8,0.25,1);
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  --text-12: 0.75rem;   /* 12px */
+  --text-13: 0.8125rem; /* 13px */
+  --text-14: 0.875rem;  /* 14px */
+  --text-16: 1rem;      /* 16px */
+  --text-20: 1.25rem;   /* 20px */
+  --text-24: 1.5rem;    /* 24px */
+  --text-32: 2rem;      /* 32px */
+  --text-48: 3rem;      /* 48px */
+}
+
+/* ---------------------------------------------------
+   Dark Mode Overrides
+   --------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-neutral-50: #111827;
+    --color-neutral-100: #1f2937;
+    --color-neutral-200: #374151;
+    --color-neutral-300: #4b5563;
+    --color-neutral-400: #6b7280;
+    --color-neutral-500: #9ca3af;
+    --color-neutral-600: #d1d5db;
+    --color-neutral-700: #e5e7eb;
+    --color-neutral-800: #f3f4f6;
+    --color-neutral-900: #f9fafb;
+
+    --color-background: var(--color-neutral-900);
+    --color-surface: #1e293b;
+    --color-surface-hover: #2d3748;
+    --color-foreground: var(--color-neutral-50);
+    --color-muted: var(--color-neutral-400);
+    --color-border: var(--color-neutral-700);
+  }
+}
+
+/* Utility shortcuts */
+.bg-brand {background-color: var(--color-brand);} .text-brand {color: var(--color-brand);} .border-brand {border-color: var(--color-brand);}

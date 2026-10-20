@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { @apply bg-paper text-ink font-sans antialiased; }
+  html.dark { @apply bg-[#0F161D] text-[#E6ECF1]; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-brand; }
+  html.dark :focus-visible { @apply outline-[#7FB2E0]; }
+}
+@layer components {
+  .panel { @apply rounded-lg border border-paper-line bg-paper-card; }
+  html.dark .panel { @apply border-[#25313C] bg-[#16202A]; }
+  .field { @apply w-full rounded-md border border-paper-line bg-white px-3 py-2 text-sm; }
+  html.dark .field { @apply border-[#2C3A47] bg-[#0F161D]; }
+  .btn { @apply rounded-md bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-[#183E61] disabled:opacity-50; }
+  .btn-quiet { @apply rounded-md border border-paper-line px-3 py-1.5 text-sm hover:bg-black/5; }
+  html.dark .btn-quiet { @apply border-[#2C3A47] hover:bg-white/5; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }

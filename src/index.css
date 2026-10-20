@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0f1117;
+  color: #e4e6ef;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2a2e3e; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #8b8fa3; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99,102,241,0.4); }
+  50%      { box-shadow: 0 0 12px 4px rgba(99,102,241,0.2); }
+}
+
+.animate-fade-in  { animation: fadeIn 0.4s ease-out both; }
+.animate-slide-down { animation: slideDown 0.3s ease-out both; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+
+/* Sidebar Transitions */
+.sidebar-transition {
+  transition: transform 200ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.sidebar-content-transition {
+  transition: margin-left 200ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.sidebar-backdrop {
+  animation: fadeIn 150ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-transition,
+  .sidebar-content-transition {
+    transition: none;
+  }
+  .sidebar-backdrop,
+  .animate-fade-in,
+  .animate-slide-down,
+  .animate-pulse-glow {
+    animation: none;
+  }
+}
